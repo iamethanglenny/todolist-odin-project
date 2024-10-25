@@ -6,3 +6,4 @@ function ToDo(title, description, dueDate, priority, notes, checklist) {
     this.notes = notes;
     this.checklist = checklist;
 }
+
