@@ -15,6 +15,7 @@ function ToDo(title, description, dueDate, priority, notes, checklist) {
 
 document.addEventListener('DOMContentLoaded', () => {
     showAllToDos();
+    all.classList.add("active");
 });
 
 const contentDiv = document.getElementById("content");

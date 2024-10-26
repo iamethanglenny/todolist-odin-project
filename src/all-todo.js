@@ -20,21 +20,27 @@ const showAllToDos = () => {
         entryDiv.classList.add("to-do-entry");
 
         const entryTitle = document.createElement("h3");
+        entryTitle.classList.add("to-do-title");
         entryTitle.textContent = toDo.title || "Untitled";
 
         const entryDescription = document.createElement("p");
+        entryDescription.classList.add("to-do-description");
         entryDescription.textContent = `Description: ${toDo.description || "N/A"}`;
 
         const entryDueDate = document.createElement("p");
+        entryDueDate.classList.add("to-do-due-date");
         entryDueDate.textContent = `Due Date: ${toDo.dueDate || "N/A"}`;
 
         const entryPriority = document.createElement("p");
+        entryPriority.classList.add("to-do-priority");
         entryPriority.textContent = `Priority: ${toDo.priority ? "High" : "Low"}`;
 
         const entryNotes = document.createElement("p");
+        entryNotes.classList.add("to-do-notes");
         entryNotes.textContent = `Notes: ${toDo.notes || "N/A"}`;
 
         const entryChecklist = document.createElement("p");
+        entryChecklist.classList.add("to-do-checklist");
         entryChecklist.textContent = `Checklist: ${toDo.checklist ? "Yes" : "No"}`;
 
         // Append all data to entry div

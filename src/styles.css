@@ -98,7 +98,7 @@ nav .tag {
 
 #content {
     flex: 1;
-    padding: 20px;
+    padding: 40px;
     background-color: #ffffff;
     overflow-y: auto;
 }
@@ -132,7 +132,8 @@ nav .tag {
 
 .to-do-due-date,
 .to-do-priority,
-.to-do-notes {
+.to-do-notes,
+.to-do-checklist {
     font-size: 0.9rem; /* Slightly smaller font */
     color: #777; /* Even lighter color for less emphasis */
     margin-bottom: 4px; /* Space below each piece of info */
