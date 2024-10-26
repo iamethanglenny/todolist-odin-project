@@ -1,5 +1,5 @@
 import { createToDo } from "./create-todo.js";
-
+import { showAllToDos } from "./all-todo.js";
 
 
 // Might not need this here
@@ -31,7 +31,7 @@ const addToDoBtn = document.getElementById("addToDo");
 
 allBtn.addEventListener("click", () => {
     clearContent();
-
+    showAllToDos();
 });
 
 todayBtn.addEventListener("click", () => {
