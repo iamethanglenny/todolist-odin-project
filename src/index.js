@@ -1,5 +1,6 @@
 import { createToDo } from "./create-todo.js";
 import { showAllToDos } from "./all-todo.js";
+import "./styles.css";
 
 
 // Might not need this here
@@ -12,15 +13,29 @@ function ToDo(title, description, dueDate, priority, notes, checklist) {
     this.checklist = checklist;
 }
 
-/* document.addEventListener('DOMContentLoaded', () => {
-    allContent();
-}); */
+document.addEventListener('DOMContentLoaded', () => {
+    showAllToDos();
+});
 
 const contentDiv = document.getElementById("content");
 
 function clearContent() {
     contentDiv.innerHTML = "";
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll(".tag"); // Select all tabs with the 'tag' class
+
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+            // Remove 'active' class from all tabs
+            tabs.forEach((tab) => tab.classList.remove("active"));
+
+            // Add 'active' class to the clicked tab
+            tab.classList.add("active");
+        });
+    });
+});
 
 const allBtn = document.getElementById("all");
 const todayBtn = document.getElementById("today");

@@ -1,0 +1,139 @@
+body {
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    height: 100vh;
+}
+
+nav {
+    width: 200px;
+    background-color: #e4e4e4;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+nav .tag {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #b3b3b3bf;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    border-radius: 5px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#all:hover {
+    background-color: #1f2122;;
+    color: white;
+}
+
+#all.active {
+    background-color: #1f2122;;
+    color: white;
+}
+
+#today:hover {
+    background-color: #007bff;;
+    color: white;
+}
+
+#today.active {
+    background-color: #007bff;;
+    color: white;
+}
+
+#scheduled:hover {
+    background-color: #ff0000ed;;
+    color: white;
+}
+
+#scheduled.active {
+    background-color: #ff0000ed;;
+    color: white;
+}
+
+#flagged:hover {
+    background-color: #ff8000;;
+    color: white;
+}
+
+#flagged.active {
+    background-color: #ff8000;;
+    color: white;
+}
+
+#completed:hover {
+    background-color: #2d3d4e;;
+    color: white;
+}
+
+#completed.active {
+    background-color: #2d3d4e;;
+    color: white;
+}
+
+#addToDo:hover {
+    background-color: #8236ed;;
+    color: white;
+}
+
+#addToDo.active {
+    background-color: #8236ed;;
+    color: white;
+}
+
+#content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    overflow-y: auto;
+}
+
+.to-do-entry {
+    border: 1px solid #e0e0e0; /* Light grey border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 16px; /* Spacing inside the entry */
+    margin: 16px 0; /* Spacing between entries */
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s; /* Smooth scaling effect */
+}
+
+.to-do-entry:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+.to-do-title {
+    font-size: 1.5rem; /* Larger font for the title */
+    color: #333; /* Dark text color */
+    margin-bottom: 8px; /* Space below the title */
+}
+
+
+.to-do-description {
+    font-size: 1rem; /* Standard size for description */
+    color: #555; /* Slightly lighter color */
+    margin-bottom: 8px; /* Space below description */
+}
+
+.to-do-due-date,
+.to-do-priority,
+.to-do-notes {
+    font-size: 0.9rem; /* Slightly smaller font */
+    color: #777; /* Even lighter color for less emphasis */
+    margin-bottom: 4px; /* Space below each piece of info */
+}
