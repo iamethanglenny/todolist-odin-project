@@ -1,7 +1,25 @@
 const createToDo =() => {
 
+    function handleFormSubmit(event) {
+        event.preventDefault();
+
+        const toDoData = {
+            title: document.getElementById("title").value,
+            description: document.getElementById("description").value,
+            dueDate: document.getElementById("dueDate").value,
+            priority: document.getElementById("priority").value,
+            notes: document.getElementById("notes").value,
+            checklist: document.getElementById("checklist").checked,
+        }
+
+        localStorage.setItem("toDoData", JSON.stringify(toDoData));
+
+        alert("Form data saved locally!");
+    }
+
     const toDoForm = document.createElement("form");
     toDoForm.setAttribute("id", "toDoForm");
+    toDoForm.addEventListener("submit", handleFormSubmit)
 
     const inputTypes = [
         { label: "Title", type: "text", name: "title" },
