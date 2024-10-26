@@ -1,4 +1,4 @@
-function createToDo() {
+const createToDo =() => {
 
     const toDoForm = document.createElement("form");
     toDoForm.setAttribute("id", "toDoForm");
@@ -33,9 +33,7 @@ function createToDo() {
     submitBtn.textContent = "Add ToDo";
     toDoForm.appendChild(submitBtn);
 
-    document.getElementById("container").appendChild(toDoForm);
+    document.getElementById("content").appendChild(toDoForm);
 }
-
-createToDo();
 
 export { createToDo };
