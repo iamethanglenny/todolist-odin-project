@@ -1,5 +1,9 @@
 import { createToDo } from "./create-todo.js";
 import { showAllToDos } from "./all-todo.js";
+import { completedToDo } from "./completed.js";
+import { flaggedToDo } from "./flagged.js";
+import { projects } from "./projects.js";
+import { todayToDo } from "./today.js";
 import "./styles.css";
 
 
@@ -40,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const allBtn = document.getElementById("all");
 const todayBtn = document.getElementById("today");
-const scheduledBtn = document.getElementById("scheduled");
+const projectsBtn = document.getElementById("projects");
 const flaggedBtn = document.getElementById("flagged");
 const completedBtn = document.getElementById("completed");
 const addToDoBtn = document.getElementById("addToDo");
@@ -52,22 +56,22 @@ allBtn.addEventListener("click", () => {
 
 todayBtn.addEventListener("click", () => {
     clearContent();
-    
+    todayToDo();
 });
 
-scheduledBtn.addEventListener("click", () => {
+projectsBtn.addEventListener("click", () => {
     clearContent();
-    
+    projects();
 });
 
 flaggedBtn.addEventListener("click", () => {
     clearContent();
-    
+    flaggedToDo();
 });
 
 completedBtn.addEventListener("click", () => {
     clearContent();
-    
+    completedToDo();
 });
 
 addToDoBtn.addEventListener("click", () => {
