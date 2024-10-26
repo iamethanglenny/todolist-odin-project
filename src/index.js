@@ -1,3 +1,8 @@
+
+
+
+
+
 function ToDo(title, description, dueDate, priority, notes, checklist) {
     this.title = title;
     this.description = description;
@@ -7,3 +12,49 @@ function ToDo(title, description, dueDate, priority, notes, checklist) {
     this.checklist = checklist;
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    allContent();
+});
+
+const contentDiv = document.getElementById("content");
+
+function clearContent() {
+    contentDiv.innerHTML = "";
+}
+
+const allBtn = document.getElementById("all");
+const todayBtn = document.getElementById("today");
+const scheduledBtn = document.getElementById("scheduled");
+const flaggedBtn = document.getElementById("flagged");
+const completedBtn = document.getElementById("completed");
+const addToDoBtn = document.getElementById("addToDo");
+
+allBtn.addEventListener("click", () => {
+    clearContent();
+
+});
+
+todayBtn.addEventListener("click", () => {
+    clearContent();
+    
+});
+
+scheduledBtn.addEventListener("click", () => {
+    clearContent();
+    
+});
+
+flaggedBtn.addEventListener("click", () => {
+    clearContent();
+    
+});
+
+completedBtn.addEventListener("click", () => {
+    clearContent();
+    
+});
+
+addToDoBtn.addEventListener("click", () => {
+
+    
+});
