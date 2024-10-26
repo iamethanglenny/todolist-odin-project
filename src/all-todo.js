@@ -4,40 +4,38 @@ const showAllToDos = () => {
     contentDiv.innerHTML = "";
 
     // Retrieve and parse stored data
-    const storedData = localStorage.getItem("toDoData");
-    if (!storedData) {
+    const storedData = JSON.parse(localStorage.getItem("toDoList"));
+    if (!storedData || storedData.length === 0) {
         contentDiv.textContent = "No to-do entries found.";
         return;
     }
-
-    const toDoEntries = JSON.parse(storedData);
 
     // Create a container for entries
     const entriesContainer = document.createElement("div");
     entriesContainer.classList.add("entries-container");
 
     // Display each entry's data
-    Object.keys(toDoEntries).forEach((key) => {
+    storedData.forEach(toDo => {
         const entryDiv = document.createElement("div");
         entryDiv.classList.add("to-do-entry");
 
         const entryTitle = document.createElement("h3");
-        entryTitle.textContent = toDoEntries[key].title;
+        entryTitle.textContent = toDo.title || "Untitled";
 
         const entryDescription = document.createElement("p");
-        entryDescription.textContent = `Description: ${toDoEntries[key].description}`;
+        entryDescription.textContent = `Description: ${toDo.description || "N/A"}`;
 
         const entryDueDate = document.createElement("p");
-        entryDueDate.textContent = `Due Date: ${toDoEntries[key].dueDate}`;
+        entryDueDate.textContent = `Due Date: ${toDo.dueDate || "N/A"}`;
 
         const entryPriority = document.createElement("p");
-        entryPriority.textContent = `Priority: ${toDoEntries[key].priority ? "High" : "Low"}`;
+        entryPriority.textContent = `Priority: ${toDo.priority ? "High" : "Low"}`;
 
         const entryNotes = document.createElement("p");
-        entryNotes.textContent = `Notes: ${toDoEntries[key].notes}`;
+        entryNotes.textContent = `Notes: ${toDo.notes || "N/A"}`;
 
         const entryChecklist = document.createElement("p");
-        entryChecklist.textContent = `Checklist: ${toDoEntries[key].checklist ? "Yes" : "No"}`;
+        entryChecklist.textContent = `Checklist: ${toDo.checklist ? "Yes" : "No"}`;
 
         // Append all data to entry div
         entryDiv.appendChild(entryTitle);

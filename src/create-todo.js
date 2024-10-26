@@ -10,11 +10,15 @@ const createToDo =() => {
             priority: document.getElementById("priority").value,
             notes: document.getElementById("notes").value,
             checklist: document.getElementById("checklist").checked,
-        }
+        };
 
-        localStorage.setItem("toDoData", JSON.stringify(toDoData));
+        const existingEntries = JSON.parse(localStorage.getItem("toDoList")) || [];
 
-        alert("Form data saved locally!");
+        existingEntries.push(toDoData);
+
+        localStorage.setItem("toDoList", JSON.stringify(existingEntries));
+
+        alert("To-Do saved locally!");
     }
 
     const toDoForm = document.createElement("form");
