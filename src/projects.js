@@ -31,13 +31,25 @@ const projects = () => {
 
 const displayToDosByProject = (projectType) => {
     document.getElementById("content").innerHTML = "";
-    const existingEntries = JSON.parse(localStorage.getItem("toDoList")) || [];
 
-    const filteredEntries = existingEntries.filter(toDo => toDo.projectType === projectType);
+    const backButton = document.createElement("button");
+    backButton.textContent = "Back to Projects";
+    backButton.addEventListener("click", projects);
+
+    const heroHeading = document.createElement("h2");
+    heroHeading.classList.add("heroHeading");
+    heroHeading.textContent = `To-Dos for Project: ${projectType}`;
+
+    contentDiv.appendChild(backButton);
+    contentDiv.appendChild(heroHeading);
+
+
+    const existingEntries = JSON.parse(localStorage.getItem("toDoList")) || [];
+    const filteredEntries = existingEntries.filter(toDo => toDo.projectType === projectType && !toDo.completed);
 
     if (filteredEntries.length === 0) {
         const noToDosMessage = document.createElement("p");
-        noToDosMessage.textContent = `No to-dos found for ${projectType}.`;
+        noToDosMessage.textContent = `No to-dos found for project type ${projectType}.`;
         document.getElementById("content").appendChild(noToDosMessage);
         return;
     }

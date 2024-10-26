@@ -3,10 +3,22 @@ const showAllToDos = () => {
     const contentDiv = document.getElementById("content");
     contentDiv.innerHTML = "";
 
+    const heroHeading = document.createElement("h1");
+    heroHeading.classList.add("heroHeading");
+    heroHeading.textContent = "Welcome to your to-do list, Ethan"
+
     // Retrieve and parse stored data
     const storedData = JSON.parse(localStorage.getItem("toDoList"));
     if (!storedData || storedData.length === 0) {
         contentDiv.textContent = "No to-do entries found.";
+        return;
+    }
+
+    const activeItems = storedData.filter(toDo => !toDo.completed);
+
+    // Check if there are active items after filtering
+    if (activeItems.length === 0) {
+        contentDiv.textContent = "No active to-do entries found.";
         return;
     }
 
@@ -43,6 +55,20 @@ const showAllToDos = () => {
         entryChecklist.classList.add("to-do-checklist");
         entryChecklist.textContent = `Checklist: ${toDo.checklist ? "Yes" : "No"}`;
 
+        const completeCheckbox = document.createElement("input");
+        completeCheckbox.setAttribute("type", "checkbox");
+        completeCheckbox.classList.add("to-do-complete-checkbox");
+        completeCheckbox.checked = toDo.completed || false;
+        completeCheckbox.addEventListener("change", () => {
+            toDo.completed = completeCheckbox.checked;
+            localStorage.setItem("toDoList", JSON.stringify(storedData));
+            showAllToDos(); // Refresh the list after marking as complete
+        });
+
+        const completeLabel = document.createElement("label");
+        completeLabel.textContent = "Mark as completed";
+        completeLabel.appendChild(completeCheckbox);
+
         // Append all data to entry div
         entryDiv.appendChild(entryTitle);
         entryDiv.appendChild(entryDescription);
@@ -56,6 +82,7 @@ const showAllToDos = () => {
     });
 
     // Append container to content div
+    contentDiv.appendChild(heroHeading);
     contentDiv.appendChild(entriesContainer);
 };
 
