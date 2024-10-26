@@ -1,8 +1,8 @@
+import { createToDo } from "./create-todo.js";
 
 
 
-
-
+// Might not need this here
 function ToDo(title, description, dueDate, priority, notes, checklist) {
     this.title = title;
     this.description = description;
@@ -12,9 +12,9 @@ function ToDo(title, description, dueDate, priority, notes, checklist) {
     this.checklist = checklist;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
     allContent();
-});
+}); */
 
 const contentDiv = document.getElementById("content");
 
@@ -55,6 +55,6 @@ completedBtn.addEventListener("click", () => {
 });
 
 addToDoBtn.addEventListener("click", () => {
-
-    
+    clearContent();
+    createToDo();
 });
