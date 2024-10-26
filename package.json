@@ -11,9 +11,11 @@
   "description": "",
   "devDependencies": {
     "css-loader": "^7.1.2",
+    "file-loader": "^6.2.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
     "style-loader": "^4.0.0",
+    "url-loader": "^4.1.1",
     "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0"
@@ -31,6 +33,7 @@
     "colorette": "^2.0.20",
     "commander": "^2.20.3",
     "cross-spawn": "^7.0.3",
+    "date-fns": "^4.1.0",
     "electron-to-chromium": "^1.5.45",
     "enhanced-resolve": "^5.17.1",
     "envinfo": "^7.14.0",
@@ -84,6 +87,7 @@
     "safe-buffer": "^5.2.1",
     "schema-utils": "^3.3.0",
     "serialize-javascript": "^6.0.2",
+    "sf-symbols": "^1.0.0",
     "shallow-clone": "^3.0.1",
     "shebang-command": "^2.0.0",
     "shebang-regex": "^3.0.0",
