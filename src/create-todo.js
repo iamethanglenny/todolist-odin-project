@@ -14,6 +14,7 @@ const createToDo =() => {
             priority: document.getElementById("priority").value,
             notes: document.getElementById("notes").value,
             projectType: document.getElementById("projectType").value,
+            createdDate: new Date().toISOString().split('T')[0],
         };
 
         const existingEntries = JSON.parse(localStorage.getItem("toDoList")) || [];
