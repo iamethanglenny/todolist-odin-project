@@ -139,14 +139,6 @@ nav .tag {
     margin-bottom: 4px; /* Space below each piece of info */
 }
 
-.form-input {
-    width: 500px;
-    padding: 8px;
-    margin-top: 4px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
 #toDoForm label {
     display: block; /* Ensure labels are block elements */
     margin-bottom: 5px; /* Space below labels */
@@ -202,4 +194,52 @@ nav .tag {
 
 .toDoForm button[type="submit"]:hover {
     background-color: #347b38;
+}
+
+#projectsDiv {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px; /* Spacing between project divs */
+    justify-content: center; /* Center the project divs */
+}
+
+.project-type {
+    background-color: #f0f0f0; /* Light background */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Spacing inside */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+    width: 150px; /* Fixed width for uniformity */
+    text-align: center; /* Center text */
+    font-weight: 600;
+}
+
+.project-type:hover {
+    background-color: #e0e0e0; /* Darker on hover */
+}
+
+#flaggedDiv {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px; /* Spacing between project divs */
+    justify-content: center; /* Center the project divs */
+}
+
+.priorityType {
+    background-color: #f0f0f0; /* Light background */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Spacing inside */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+    width: 150px; /* Fixed width for uniformity */
+    text-align: center; /* Center text */
+    font-weight: 600;
+}
+
+.priorityType:hover {
+    background-color: #e0e0e0; /* Darker on hover */
 }
