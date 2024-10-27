@@ -30,10 +30,12 @@ const projects = () => {
 };
 
 const displayToDosByProject = (projectType) => {
-    document.getElementById("content").innerHTML = "";
+    const contentDiv = document.getElementById("content"); // Define contentDiv here
+    contentDiv.innerHTML = "";
 
     const backButton = document.createElement("button");
     backButton.textContent = "Back to Projects";
+    backButton.classList.add("back-button");
     backButton.addEventListener("click", projects);
 
     const heroHeading = document.createElement("h2");
@@ -45,7 +47,7 @@ const displayToDosByProject = (projectType) => {
 
 
     const existingEntries = JSON.parse(localStorage.getItem("toDoList")) || [];
-    const filteredEntries = existingEntries.filter(toDo => toDo.projectType === projectType && !toDo.completed);
+    const filteredEntries = existingEntries.filter(toDo => toDo.projectType === projectType);
 
     if (filteredEntries.length === 0) {
         const noToDosMessage = document.createElement("p");

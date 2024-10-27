@@ -30,7 +30,8 @@ const flaggedToDo = () => {
 };
 
 const displayToDosByPriority = (priorityType) => {
-    document.getElementById("content").innerHTML = "";
+    const contentDiv = document.getElementById("content"); // Define contentDiv here
+    contentDiv.innerHTML = "";
 
     const heroHeading = document.createElement("h2");
     heroHeading.classList.add("heroHeading");
@@ -39,12 +40,18 @@ const displayToDosByPriority = (priorityType) => {
 
     const backButton = document.createElement("button");
     backButton.textContent = "Back to Flagged To-Dos";
+    backButton.classList.add("back-button");
     backButton.addEventListener("click", flaggedToDo);
     contentDiv.appendChild(backButton);
 
 
     const existingEntries = JSON.parse(localStorage.getItem("toDoList")) || [];
-    const filteredEntries = existingEntries.filter(toDo => toDo.priorityType === priorityType && !toDo.completed);
+
+    console.log("Existing Entries: ", existingEntries);
+
+    const filteredEntries = existingEntries.filter(toDo => toDo.priorityType === priorityType);
+
+    console.log(`Filtered Entries for ${priorityType}: `, filteredEntries);
 
     if (filteredEntries.length === 0) {
         const noToDosMessage = document.createElement("p");

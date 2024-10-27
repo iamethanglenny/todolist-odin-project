@@ -205,8 +205,8 @@ nav .tag {
 }
 
 .project-type {
-    background-color: #f0f0f0; /* Light background */
-    border: 1px solid #ccc; /* Light border */
+    background-color: #007BFF; /* Light background */
+    border: 2px ridge #001932; /* Light border */
     border-radius: 8px; /* Rounded corners */
     padding: 20px; /* Spacing inside */
     cursor: pointer; /* Pointer cursor on hover */
@@ -214,10 +214,11 @@ nav .tag {
     width: 150px; /* Fixed width for uniformity */
     text-align: center; /* Center text */
     font-weight: 600;
+    color: white
 }
 
 .project-type:hover {
-    background-color: #e0e0e0; /* Darker on hover */
+    background-color: #124e8f; /* Darker on hover */
 }
 
 #flaggedDiv {
@@ -229,8 +230,8 @@ nav .tag {
 }
 
 .priorityType {
-    background-color: #f0f0f0; /* Light background */
-    border: 1px solid #ccc; /* Light border */
+    background-color: #007BFF; /* Light background */
+    border: 2px ridge #001932; /* Light border */
     border-radius: 8px; /* Rounded corners */
     padding: 20px; /* Spacing inside */
     cursor: pointer; /* Pointer cursor on hover */
@@ -238,8 +239,31 @@ nav .tag {
     width: 150px; /* Fixed width for uniformity */
     text-align: center; /* Center text */
     font-weight: 600;
+    color: white;
 }
 
 .priorityType:hover {
-    background-color: #e0e0e0; /* Darker on hover */
+    background-color: #124e8f; /* Darker on hover */
+}
+
+.back-button {
+    background-color: #007BFF; /* Primary color */
+    color: white;               /* Text color */
+    border: none;               /* Remove border */
+    border-radius: 5px;        /* Rounded corners */
+    padding: 10px 20px;        /* Padding */
+    font-size: 16px;           /* Font size */
+    cursor: pointer;            /* Change cursor on hover */
+    transition: background-color 0.3s ease; /* Transition effect */
+}
+
+/* Hover effect */
+.back-button:hover {
+    background-color: #0056b3; /* Darker shade for hover */
+}
+
+/* Focus effect for accessibility */
+.back-button:focus {
+    outline: 2px solid #0056b3; /* Outline on focus */
+    outline-offset: 2px;        /* Space between the outline and button */
 }

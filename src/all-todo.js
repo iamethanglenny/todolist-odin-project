@@ -14,13 +14,7 @@ const showAllToDos = () => {
         return;
     }
 
-    const activeItems = storedData.filter(toDo => !toDo.completed);
 
-    // Check if there are active items after filtering
-    if (activeItems.length === 0) {
-        contentDiv.textContent = "No active to-do entries found.";
-        return;
-    }
 
     // Create a container for entries
     const entriesContainer = document.createElement("div");
@@ -55,20 +49,7 @@ const showAllToDos = () => {
         entryChecklist.classList.add("to-do-checklist");
         entryChecklist.textContent = `Checklist: ${toDo.checklist ? "Yes" : "No"}`;
 
-        const completeCheckbox = document.createElement("input");
-        completeCheckbox.setAttribute("type", "checkbox");
-        completeCheckbox.classList.add("to-do-complete-checkbox");
-        completeCheckbox.checked = toDo.completed || false;
-        completeCheckbox.addEventListener("change", () => {
-            toDo.completed = completeCheckbox.checked;
-            localStorage.setItem("toDoList", JSON.stringify(storedData));
-            showAllToDos(); // Refresh the list after marking as complete
-        });
-
-        const completeLabel = document.createElement("label");
-        completeLabel.textContent = "Mark as completed";
-        completeLabel.appendChild(completeCheckbox);
-
+    
         // Append all data to entry div
         entryDiv.appendChild(entryTitle);
         entryDiv.appendChild(entryDescription);

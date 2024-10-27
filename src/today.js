@@ -12,7 +12,7 @@ const todayToDo = () => {
     const existingEntries = JSON.parse(localStorage.getItem("toDoList")) || [];
     const today = new Date().toISOString().split('T')[0]; // Get today's date
 
-    const todaysEntries = existingEntries.filter(toDo => toDo.createdDate === today && !toDo.completed);
+    const todaysEntries = existingEntries.filter(toDo => toDo.createdDate === today);
 
     if (todaysEntries.length === 0) {
         const noToDosMessage = document.createElement("p");
@@ -33,23 +33,6 @@ const todayToDo = () => {
             <p class="to-do-notes">Notes: ${toDo.notes}</p>
             <p class="to-do-checklist">Checklist: ${toDo.checklist ? "Yes" : "No"}</p>
         `;
-
-        const completeCheckbox = document.createElement("input");
-        completeCheckbox.setAttribute("type", "checkbox");
-        completeCheckbox.classList.add("to-do-complete-checkbox");
-        completeCheckbox.checked = toDo.completed || false;
-        completeCheckbox.addEventListener("change", () => {
-            toDo.completed = completeCheckbox.checked;
-            localStorage.setItem("toDoList", JSON.stringify(existingEntries));
-            todayToDo(); // Refresh today's list after marking as complete
-        });
-
-        const completeLabel = document.createElement("label");
-        completeLabel.textContent = "Mark as completed";
-        completeLabel.appendChild(completeCheckbox);
-
-        // Append the completed checkbox and entry to the container
-        toDoEntry.appendChild(completeLabel);
 
         document.getElementById("content").appendChild(toDoEntry);
     });

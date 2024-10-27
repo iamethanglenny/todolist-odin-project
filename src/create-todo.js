@@ -11,11 +11,10 @@ const createToDo =() => {
             title: document.getElementById("title").value,
             description: document.getElementById("description").value,
             dueDate: document.getElementById("dueDate").value,
-            priority: document.getElementById("priority").value,
+            priorityType: document.getElementById("priority").value,
             notes: document.getElementById("notes").value,
             projectType: document.getElementById("projectType").value,
             createdDate: new Date().toISOString().split('T')[0],
-            completed: document.getElementById("completed").checked,
         };
 
         const existingEntries = JSON.parse(localStorage.getItem("toDoList")) || [];
@@ -39,7 +38,6 @@ const createToDo =() => {
         { label: "Priority", type: "select", name: "priority", options: ["Low", "Medium", "High"] },
         { label: "Project Type", type: "select", name: "projectType", options: ["Lame", "Boring", "Fun", "Challenging", "Exciting"] },
         { label: "Notes", type: "text", name: "notes" },
-        { label: "Mark as completed", type: "checkbox", name: "completed" }
     ];
 
     inputTypes.forEach(inputData => {

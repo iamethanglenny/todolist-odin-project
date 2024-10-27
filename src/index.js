@@ -1,6 +1,5 @@
 import { createToDo } from "./create-todo.js";
 import { showAllToDos } from "./all-todo.js";
-import { completedToDo } from "./completed.js";
 import { flaggedToDo } from "./flagged.js";
 import { projects } from "./projects.js";
 import { todayToDo } from "./today.js";
@@ -67,11 +66,6 @@ projectsBtn.addEventListener("click", () => {
 flaggedBtn.addEventListener("click", () => {
     clearContent();
     flaggedToDo();
-});
-
-completedBtn.addEventListener("click", () => {
-    clearContent();
-    completedToDo();
 });
 
 addToDoBtn.addEventListener("click", () => {
